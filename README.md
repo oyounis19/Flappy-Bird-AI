@@ -21,17 +21,14 @@ The project is divided into 3 main parts:
 
 ## 🎥 Sample Video
 
-<video>
-  <source src="Sample.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+![Flappy Bird AI Playground Sample](assets/Sample.gif)
 
 ## 🚀 Getting Started
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/oyounis19/Flappy-Bird-AI-using-Genetic-Algorithm.git
+   git clone https://github.com/oyounis19/Flappy-Bird-AI.git
    ```
 
 2. **Install the required packages:**
@@ -44,12 +41,6 @@ The project is divided into 3 main parts:
 
    ```bash
    python main.py
-   ```
-
-   for a more detailed run:
-
-   ```bash
-    python main.ipynb
    ```
 
 4. **Sit Back and Enjoy:**
