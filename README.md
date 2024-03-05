@@ -9,7 +9,7 @@ Welcome to the Flappy Bird AI 🐦 using Genetic Algorithm. This project is a si
 - **GA.py**: The Genetic Algorithm implementation.
 - **model.py**: The Neural Network model.
 - **game.py**: The Flappy Bird game using Pygame.
-- **Best_Weights.npy**: The best weights of the Neural Network after training.
+- **Best_Weights.npz**: The best weights of the Neural Network after training.
 
 ## 🌐 Overview
 
