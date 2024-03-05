@@ -13,11 +13,11 @@ class Game:
         self.color = color
         self.width, self.height = width, height
         self.jump_size = jump_size
-        self.pipe_distance = width // num_pipes + 100
+        self.pipe_distance = width // num_pipes + 100 # tweak this value to change the distance between pipes
         self.num_pipes = num_pipes
         self.bird_width = 36
         self.bird_height = 27
-        self.bird_x = 100 # bird's x position
+        self.bird_x = 100
         self.inited = False
         self.high_score = 0
 

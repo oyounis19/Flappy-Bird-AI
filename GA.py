@@ -22,12 +22,13 @@ class GeneticAlgorithm:
         self.mu = mutation_rate
         self.cp = crossover_probability
         self.random_seed = random_seed
-
+        self.best_scores = None
+        
     def __init_population(self, hs=8) -> list[NN]:
         '''
         Initialize population of specified size.
         '''
-        pop = [self.nn(hidden_size=hs) for _ in range(self.population_size)] # Initializes bird population with the default Neural network params.
+        pop = [self.nn(hidden_size=hs) for _ in range(self.population_size)]
         return pop
 
     def __crossover(self, parent1: NN, parent2: NN)-> tuple[NN, NN]:
@@ -54,10 +55,6 @@ class GeneticAlgorithm:
     def __select_parents(self, fitness_scores: np.ndarray, pop: list[NN]) -> np.ndarray:
         '''
         Select parents based on fitness scores by using roulette wheel selection algorithm.
-        param fitness_scores: fitness scores of the population
-        param num_parents: number of parents to select
-        param pop: population
-        return: selected parents
         '''
         if np.sum(fitness_scores) == 0:
             probabilities = np.ones_like(fitness_scores) / len(fitness_scores)
@@ -90,6 +87,7 @@ class GeneticAlgorithm:
             self.game.init_screen()
             pop = self.__init_population(hs=hidden_size)
 
+            self.best_scores = []
             self.best_nn = (None, -1) # (best neural network, best score)
             for epoch in range(epochs):
                 # Evaluate
@@ -111,11 +109,14 @@ class GeneticAlgorithm:
                 # get best network ever found
                 self.__get_best_network(fitness_scores, pop)
 
+                # Append best scores
+                self.best_scores.append(fitness_scores.max())      
+
                 # Show iteration information
                 print(f'Epoch {epoch}: Best Score = {fitness_scores.max()}')
 
-                if max_score and fitness_scores.max() > max_score:
-                    print('breaking')
+                # Break if max_score is reached
+                if max_score and (fitness_scores.max() > max_score):
                     break
 
         except Exception as e:
@@ -129,8 +130,6 @@ class GeneticAlgorithm:
     def test(self, nn: NN, num_episodes=10):
         '''
         Test the neural network.
-        param nn: neural network
-        param num_episodes: number of episodes to run
         '''
         for i in range(num_episodes):
             self.game.run(nn, i)
