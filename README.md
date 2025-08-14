@@ -2,6 +2,10 @@
 
 Welcome to the Flappy Bird AI 🐦 using Genetic Algorithm. This project is a simple implementation of the Flappy Bird game using the Pygame library, Neural Networks, and Genetic Algorithm. The game is played by a population of birds, each with its own Neural Network. The birds are trained using the Genetic Algorithm to learn how to play the game! 🤖.
 
+## 🎥 Sample Video
+
+![Flappy Bird AI Playground Sample](assets/Sample.gif)
+
 ## 📚 What's Inside
 
 - **main.py**: The main file that runs the game and the Genetic Algorithm.
@@ -18,10 +22,6 @@ The project is divided into 3 main parts:
 1. The Flappy Bird game using Pygame
 2. The Neural Network
 3. The Genetic Algorithm
-
-## 🎥 Sample Video
-
-![Flappy Bird AI Playground Sample](assets/Sample.gif)
 
 ## 🚀 Getting Started
 
